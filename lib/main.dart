@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           // When navigating to the "/" route, build the FirstScreen widget.
-         // '/': (context) => const OnboardingScreen(),
+          // '/': (context) => const OnboardingScreen(),
           // When navigating to the "/second" route, build the SecondScreen widget.
           '/second': (context) => const HomeScreen(),
         },
         theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.blueGrey,
         ),
         home: const OnboardingScreen());
   }

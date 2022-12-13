@@ -20,9 +20,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   int _currentPage = 0;
   List colors = const [
-    Color(0xffDAD3C8),
-    Color(0xffFFE5DE),
-    Color(0xffDCF6E6),
+    Colors.white,
+    Colors.white,
+    Colors.white,
   ];
 
   AnimatedContainer _buildDots({
@@ -34,7 +34,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         borderRadius: BorderRadius.all(
           Radius.circular(50),
         ),
-        color: Color(0xFF000000),
+        color: Color.fromARGB(255, 14, 17, 92),
       ),
       margin: const EdgeInsets.only(right: 5),
       height: 10,
@@ -121,7 +121,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             },
                             child: const Text("START"),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
+                              backgroundColor: Color.fromARGB(255, 14, 17, 92),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
@@ -144,9 +144,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 onPressed: () {
                                   _controller.jumpToPage(2);
                                 },
+                                // ignore: sort_child_properties_last
                                 child: const Text(
                                   "SKIP",
-                                  style: TextStyle(color: Colors.black),
+                                  style:  TextStyle(
+                                    color: Color.fromARGB(255, 14, 17, 92),
+                                  ),
                                 ),
                                 style: TextButton.styleFrom(
                                   elevation: 0,
@@ -165,7 +168,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 },
                                 child: const Text("NEXT"),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 14, 17, 92),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50),
                                   ),
