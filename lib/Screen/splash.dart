@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fin_tracker/Screen/size_config.dart';
-import 'package:fin_tracker/Screen/splash_content';
+import 'package:fin_tracker/Screen/splash_content.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
