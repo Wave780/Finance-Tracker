@@ -22,9 +22,7 @@ class MyApp extends StatelessWidget {
           // When navigating to the "/second" route, build the SecondScreen widget.
           '/second': (context) => const HomeScreen(),
         },
-        theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-        ),
+        theme: ThemeData(primarySwatch: Colors.pink),
         home: const OnboardingScreen());
   }
 }
