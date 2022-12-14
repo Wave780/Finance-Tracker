@@ -11,10 +11,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ElevatedButton(
-        child: Text('Data'),
-        onPressed: () => Navigator.pop(context),
-      ),
-    );
+        appBar: AppBar(
+      leading: IconButton(
+          onPressed: () => Navigator.pop(context), icon: const Icon(Icons.menu)),
+          title: const Text('Fin Tracker'),
+    ));
   }
 }
+
+
+// ElevatedButton(
+        // child: Text('Data'),
+        // onPressed: () => Navigator.pop(context),
+      // ),
