@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -44,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            greeting(),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
@@ -63,12 +65,32 @@ class _HomeScreenState extends State<HomeScreen> {
               'Overview Report',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [],
-            ),
             selectMonth()
           ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Navigator.of(context)
+          //     .push(
+          //   CupertinoPageRoute(
+          //     builder: (context) => //AddExpenseNoGradient(),
+          //   ),
+          // )
+          //     .then((value) {
+          //   setState(() {});
+          // });
+        },
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            16.0,
+          ),
+        ),
+        backgroundColor: Colors.pink,
+        child: const Icon(
+          Icons.add_outlined,
+          size: 32.0,
         ),
       ),
     );
@@ -76,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget selectMonth() {
     return Padding(
-      padding: EdgeInsets.all(
+      padding: const EdgeInsets.all(
         8.0,
       ),
       child: Row(
@@ -96,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(
                   8.0,
                 ),
-                //color: index == 3 ? Static.PrimaryColor : Colors.white,
+                color: index == 3 ? Colors.pink : Colors.white,
               ),
               alignment: Alignment.center,
               child: Text(
@@ -104,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
-                  //color: index == 3 ? Colors.white : Static.PrimaryColor,
+                  color: index == 3 ? Colors.white : Colors.pink,
                 ),
               ),
             ),
@@ -123,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(
                   8.0,
                 ),
-                // color: index == 2 ? Static.PrimaryColor : Colors.white,
+                color: index == 2 ? Colors.pink : Colors.white,
               ),
               alignment: Alignment.center,
               child: Text(
@@ -131,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
-                  // color: index == 2 ? Colors.white : Static.PrimaryColor,
+                  color: index == 2 ? Colors.white : Colors.pink,
                 ),
               ),
             ),
@@ -150,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(
                   8.0,
                 ),
-                //color: index == 1 ? Static.PrimaryColor : Colors.white,
+                color: index == 1 ? Colors.pink : Colors.white,
               ),
               alignment: Alignment.center,
               child: Text(
@@ -158,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
-                  //color: index == 1 ? Colors.white : Static.PrimaryColor,
+                  color: index == 1 ? Colors.white : Colors.pink,
                 ),
               ),
             ),
@@ -166,6 +188,22 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  Widget greeting() {
+    var hour = DateTime.now().hour;
+    if (hour < 12) {
+      return const Text(
+        '🌤️Good Morning',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      );
+    }
+    if (hour < 17) {
+      return const Text('🌞Good Afternoon',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20));
+    }
+    return const Text('🌜Good Evening',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20));
   }
 }
 
