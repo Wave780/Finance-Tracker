@@ -65,7 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
               'Overview Report',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            selectMonth()
+            selectMonth(),
+            gridview()
           ],
         ),
       ),
@@ -204,6 +205,29 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return const Text('🌜Good Evening',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20));
+  }
+
+  Widget gridview() {
+    GridView.extent(
+      primary: false,
+      padding: const EdgeInsets.all(16),
+      crossAxisSpacing: 5,
+      mainAxisSpacing: 5,
+      maxCrossAxisExtent: 100.0,
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: const Text('First', style: TextStyle(fontSize: 20)),
+          color: Colors.yellow,
+        ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: const Text('Second', style: TextStyle(fontSize: 20)),
+          color: Colors.blue,
+        ),
+      ],
+    );
+    return widget;
   }
 }
 
