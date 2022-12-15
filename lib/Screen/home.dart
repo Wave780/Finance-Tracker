@@ -66,7 +66,25 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             selectMonth(),
-            gridview()
+            // GridView.count(
+            //   primary: false,
+            //   padding: const EdgeInsets.all(20),
+            //   crossAxisSpacing: 10,
+            //   mainAxisSpacing: 10,
+            //   crossAxisCount: 2,
+            //   children: <Widget>[
+            //     Container(
+            //       padding: const EdgeInsets.all(8),
+            //       color: Colors.teal[100],
+            //       child: const Text("He'd have you all unravel at the"),
+            //     ),
+            //     Container(
+            //       padding: const EdgeInsets.all(8),
+            //       color: Colors.teal[200],
+            //       child: const Text('Heed not the rabble'),
+            //     ),
+            //   ],
+            // )
           ],
         ),
       ),
@@ -206,31 +224,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return const Text('🌜Good Evening',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20));
   }
-
-  Widget gridview() {
-    GridView.extent(
-      primary: false,
-      padding: const EdgeInsets.all(16),
-      crossAxisSpacing: 5,
-      mainAxisSpacing: 5,
-      maxCrossAxisExtent: 100.0,
-      children: <Widget>[
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: const Text('First', style: TextStyle(fontSize: 20)),
-          color: Colors.yellow,
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: const Text('Second', style: TextStyle(fontSize: 20)),
-          color: Colors.blue,
-        ),
-      ],
-    );
-    return widget;
-  }
 }
 
+class BoxCard extends Container {
+  final Widget child;
+  final double height;
+  final Color color;
+
+  BoxCard({required this.child, required this.color, required this.height});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      color: Colors.pink,
+      alignment: Alignment.center,
+      child: child,
+    );
+  }
+}
 // ElevatedButton(
 // child: Text('Data'),
 // onPressed: () => Navigator.pop(context),
