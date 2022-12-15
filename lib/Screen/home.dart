@@ -32,87 +32,92 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: const Icon(Icons.menu)),
-        title: const Center(child: Text('Fin Tracker')),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            greeting(),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Container(
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.blue.shade600,
-                ),
-                child: const Center(child: Text('N 123,345,344')),
-                //color: Colors.blue.shade600,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              'Overview Report',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            selectMonth(),
-            // GridView.count(
-            //   primary: false,
-            //   padding: const EdgeInsets.all(20),
-            //   crossAxisSpacing: 10,
-            //   mainAxisSpacing: 10,
-            //   crossAxisCount: 2,
-            //   children: <Widget>[
-            //     Container(
-            //       padding: const EdgeInsets.all(8),
-            //       color: Colors.teal[100],
-            //       child: const Text("He'd have you all unravel at the"),
-            //     ),
-            //     Container(
-            //       padding: const EdgeInsets.all(8),
-            //       color: Colors.teal[200],
-            //       child: const Text('Heed not the rabble'),
-            //     ),
-            //   ],
-            // )
-          ],
+        appBar: AppBar(
+          leading: IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: const Icon(Icons.menu)),
+          title: const Center(child: Text('Fin Tracker')),
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Navigator.of(context)
-          //     .push(
-          //   CupertinoPageRoute(
-          //     builder: (context) => //AddExpenseNoGradient(),
-          //   ),
-          // )
-          //     .then((value) {
-          //   setState(() {});
-          // });
-        },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            16.0,
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              greeting(),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.blue.shade600,
+                  ),
+                  child: const Center(child: Text('N 123,345,344')),
+                  //color: Colors.blue.shade600,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                'Overview Report',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              selectMonth(),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BoxCard(
+                    color: Colors.pink,
+                    height: 10,
+                    width: 10,
+                    child: Container(
+                        margin: EdgeInsets.all(60),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Text('12,000')),
+                  ),
+                  BoxCard(
+                    color: Colors.pink,
+                    height: 750,
+                    width: 770,
+                    child: greeting(),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
-        backgroundColor: Colors.pink,
-        child: const Icon(
-          Icons.add_outlined,
-          size: 32.0,
-        ),
-      ),
-    );
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              // Navigator.of(context)
+              //     .push(
+              //   CupertinoPageRoute(
+              //     builder: (context) => //AddExpenseNoGradient(),
+              //   ),
+              // )
+              //     .then((value) {
+              //   setState(() {});
+              // });
+            },
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                16.0,
+              ),
+            ),
+            backgroundColor: Colors.pink,
+            child: const Icon(
+              Icons.add_outlined,
+              size: 32.0,
+            )));
   }
 
   Widget selectMonth() {
@@ -228,10 +233,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class BoxCard extends Container {
   final Widget child;
+  final double width;
   final double height;
   final Color color;
 
-  BoxCard({required this.child, required this.color, required this.height});
+  BoxCard(
+      {required this.child,
+      required this.color,
+      required this.height,
+      required this.width});
 
   @override
   Widget build(BuildContext context) {
