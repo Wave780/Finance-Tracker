@@ -78,11 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.pink,
                     height: 10,
                     width: 10,
-                    child: Container(
-                        margin: EdgeInsets.all(60),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Text('12,000')),
+                    child: greeting(),
                   ),
                   BoxCard(
                     color: Colors.pink,
@@ -246,8 +242,15 @@ class BoxCard extends Container {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      color: Colors.pink,
+      padding:const EdgeInsets.all(8),
+      height: 80,
+      //width: 150,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.pink,
+      ),
+
+      //color: Colors.pink,
       alignment: Alignment.center,
       child: child,
     );
