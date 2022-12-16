@@ -1,3 +1,4 @@
+import 'package:fin_tracker/common/RateCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -71,21 +72,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
+
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BoxCard(
-                    color: Colors.pink,
-                    height: 10,
-                    width: 10,
-                    child: greeting(),
-                  ),
-                  BoxCard(
-                    color: Colors.pink,
-                    height: 750,
-                    width: 770,
-                    child: greeting(),
-                  ),
+                  Center(
+                    child: RateCard(
+                      boxColor: Colors.blue,
+                      child: Text('Action'),
+                    ),
+                  )
                 ],
               ),
             ],
@@ -224,36 +219,6 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return const Text('🌜Good Evening',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20));
-  }
-}
-
-class BoxCard extends Container {
-  final Widget child;
-  final double width;
-  final double height;
-  final Color color;
-
-  BoxCard(
-      {required this.child,
-      required this.color,
-      required this.height,
-      required this.width});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding:const EdgeInsets.all(8),
-      height: 80,
-      //width: 150,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        color: Colors.pink,
-      ),
-
-      //color: Colors.pink,
-      alignment: Alignment.center,
-      child: child,
-    );
   }
 }
 // ElevatedButton(
