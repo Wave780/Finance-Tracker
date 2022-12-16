@@ -67,17 +67,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               selectMonth(),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
 
                 // crossAxisAlignment: CrossAxisAlignment.start,
+                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   Center(
-                    child: RateCard(
+                    child: Rate_Card(
                       boxColor: Colors.blue,
+                      mainColor: Colors.greenAccent,
+                      onPressed: () => Navigator.pop(context),
+                      child: Text('Action'),
+                    ),
+                  ),
+                  Center(
+                    child: Rate_Card(
+                      boxColor: Colors.blue,
+                      mainColor: Colors.redAccent,
+                      onPressed: () => print('ac'),
                       child: Text('Action'),
                     ),
                   )
