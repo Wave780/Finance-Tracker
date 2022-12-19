@@ -78,18 +78,46 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Center(
                     child: Rate_Card(
-                      boxColor: Colors.blue,
-                      mainColor: Colors.greenAccent,
+                      boxColor: Colors.black12,
+                      mainColor: Colors.green,
                       onPressed: () => Navigator.pop(context),
-                      child: Text('Action'),
+                      icon: Icon(Icons.arrow_circle_right),
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Income',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            '100,000',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                            textAlign: TextAlign.right,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Center(
                     child: Rate_Card(
-                      boxColor: Colors.blue,
-                      mainColor: Colors.redAccent,
-                      onPressed: () => print('ac'),
-                      child: Text('Action'),
+                      boxColor: Colors.black12,
+                      mainColor: Colors.red,
+                      onPressed: () => Navigator.pop(context),
+                      icon: Icon(Icons.arrow_circle_right),
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Expenses',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          Text(
+                            '100,000',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
