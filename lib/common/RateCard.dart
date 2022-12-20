@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Rate_Card extends StatefulWidget {
   final Widget child;
-  final Icon icon;
+  //final Icon icon;
   final Color boxColor;
   final Color mainColor;
   final Function onPressed;
@@ -12,7 +12,7 @@ class Rate_Card extends StatefulWidget {
     required this.child,
     required this.boxColor,
     required this.mainColor,
-    required this.onPressed, required this.icon,
+    required this.onPressed, //required this.icon,
   });
 
   @override

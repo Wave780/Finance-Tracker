@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       boxColor: Colors.black12,
                       mainColor: Colors.green,
                       onPressed: () => Navigator.pop(context),
-                      icon: Icon(Icons.arrow_circle_right),
+                      //icon: Icon(Icons.arrow_circle_right),
                       child: Column(
                         children: const [
                           Text(
@@ -105,17 +105,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       boxColor: Colors.black12,
                       mainColor: Colors.red,
                       onPressed: () => Navigator.pop(context),
-                      icon: Icon(Icons.arrow_circle_right),
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Expenses',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
+                      //icon: null,
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_circle_right),
+                          Column(
+                            children: const [
+                              Text(
+                                'Expenses',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              Text(
+                                '100,000',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              )
+                            ],
                           ),
-                          Text(
-                            '100,000',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          )
                         ],
                       ),
                     ),
