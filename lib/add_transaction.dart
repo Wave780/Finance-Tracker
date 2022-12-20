@@ -13,13 +13,13 @@ class _AddTranscationState extends State<AddTranscation> {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0.0),
       backgroundColor: Colors.white,
-      body: ListView(padding: EdgeInsets.all(12), children: [
-        Text(
+      body: ListView(padding: const EdgeInsets.all(12), children: [
+        const Text(
           "\nAdd Transaction",
           style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
           textAlign: TextAlign.center,
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Row(
@@ -27,12 +27,32 @@ class _AddTranscationState extends State<AddTranscation> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.pink, borderRadius: BorderRadius.circular(16)),
-              padding: EdgeInsets.all(18),
-              child: Icon(
+              padding: const EdgeInsets.all(18),
+              child: const Icon(
                 Icons.attach_money_outlined,
+                size: 24,
                 color: Colors.white,
               ),
-            )
+            ),
+            const SizedBox(
+              width: 12,
+            ),
+            Expanded(
+                child: TextField(
+                    decoration: InputDecoration(
+                        hintText: 'Amount', border: InputBorder.none),
+                    style: TextStyle(fontSize: 24),
+                    onChanged: (val) {
+                      try {
+                        int.parse(val);
+                      } catch (e) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            backgroundColor: Colors.white,
+                            content: Row(
+                              children: [],
+                            )));
+                      }
+                    }))
           ],
         )
       ]),
