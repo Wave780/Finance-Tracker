@@ -1,3 +1,4 @@
+import 'package:fin_tracker/add_transaction.dart';
 import 'package:fin_tracker/common/RateCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.blue.shade600,
                   ),
                   child: const Center(child: Text('N 123,345,344')),
-                  //color: Colors.blue.shade600,
                 ),
               ),
               const SizedBox(
@@ -82,20 +82,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainColor: Colors.green,
                       onPressed: () => Navigator.pop(context),
                       //icon: Icon(Icons.arrow_circle_right),
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Income',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.arrow_circle_up,
+                              color: Colors.white),
+                          Column(
+                            children: const [
+                              Text(
+                                'Income',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Text(
+                                '100,000',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                                textAlign: TextAlign.right,
+                              )
+                            ],
                           ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            '100,000',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                            textAlign: TextAlign.right,
-                          )
                         ],
                       ),
                     ),
@@ -108,13 +116,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       //icon: null,
                       child: Row(
                         children: [
-                          Icon(Icons.arrow_circle_right),
+                          const Icon(Icons.arrow_circle_down,
+                              color: Colors.white),
                           Column(
                             children: const [
                               Text(
                                 'Expenses',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20),
+                              ),
+                              SizedBox(
+                                height: 8,
                               ),
                               Text(
                                 '100,000',
@@ -135,15 +147,16 @@ class _HomeScreenState extends State<HomeScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton(
             onPressed: () {
-              // Navigator.of(context)
-              //     .push(
-              //   CupertinoPageRoute(
-              //     builder: (context) => //AddExpenseNoGradient(),
-              //   ),
-              // )
-              //     .then((value) {
-              //   setState(() {});
-              // });
+              Navigator.of(context)
+                  .push(
+                CupertinoPageRoute(
+                  builder: (context) =>
+                      AddTranscation(), //AddExpenseNoGradient(),
+                ),
+              )
+                  .then((value) {
+                setState(() {});
+              });
             },
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
