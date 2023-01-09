@@ -9,6 +9,37 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  theme: FlexThemeData.light(
+  scheme: FlexScheme.outerSpace,
+  surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
+  blendLevel: 20,
+  appBarOpacity: 0.95,
+  subThemesData: const FlexSubThemesData(
+    blendOnLevel: 20,
+    blendOnColors: false,
+  ),
+  visualDensity: FlexColorScheme.comfortablePlatformDensity,
+  // To use the playground font, add GoogleFonts package and uncomment
+  // fontFamily: GoogleFonts.notoSans().fontFamily,
+),
+darkTheme: FlexThemeData.dark(
+  scheme: FlexScheme.outerSpace,
+  surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
+  blendLevel: 15,
+  appBarStyle: FlexAppBarStyle.background,
+  appBarOpacity: 0.90,
+  subThemesData: const FlexSubThemesData(
+    blendOnLevel: 30,
+  ),
+  visualDensity: FlexColorScheme.comfortablePlatformDensity,
+  // To use the playground font, add GoogleFonts package and uncomment
+  // fontFamily: GoogleFonts.notoSans().fontFamily,
+),
+// If you do not have a themeMode switch, uncomment this line
+// to let the device system mode control the theme mode:
+// themeMode: ThemeMode.system,
+
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
