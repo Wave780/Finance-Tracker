@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   DateTime today = DateTime.now();
   DateTime now = DateTime.now();
-  int index = 1;
+  int index = 0;
 
   List<String> months = [
     "Jan",
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               alignment: Alignment.center,
               child: Text(
-                months[now.month - 3],
+                months[now.month + 1],
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
@@ -223,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               alignment: Alignment.center,
               child: Text(
-                months[now.month - 2],
+                months[now.month + 2],
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,

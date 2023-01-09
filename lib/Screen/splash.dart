@@ -65,6 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   return Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Image.asset(
                           contents[i].image,
@@ -88,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           style: TextStyle(
                             fontFamily: "Mulish",
                             fontWeight: FontWeight.w300,
-                            fontSize: (width <= 550) ? 17 : 25,
+                            fontSize: (width <= 500) ? 17 : 25,
                           ),
                           textAlign: TextAlign.center,
                         )
@@ -147,7 +148,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 // ignore: sort_child_properties_last
                                 child: const Text(
                                   "SKIP",
-                                  style:  TextStyle(
+                                  style: TextStyle(
                                     color: Color.fromARGB(255, 14, 17, 92),
                                   ),
                                 ),

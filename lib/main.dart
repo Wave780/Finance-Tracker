@@ -10,42 +10,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: FlexThemeData.light(
-  scheme: FlexScheme.outerSpace,
-  surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
-  blendLevel: 20,
-  appBarOpacity: 0.95,
-  subThemesData: const FlexSubThemesData(
-    blendOnLevel: 20,
-    blendOnColors: false,
-  ),
-  visualDensity: FlexColorScheme.comfortablePlatformDensity,
-  // To use the playground font, add GoogleFonts package and uncomment
-  // fontFamily: GoogleFonts.notoSans().fontFamily,
-),
-darkTheme: FlexThemeData.dark(
-  scheme: FlexScheme.outerSpace,
-  surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
-  blendLevel: 15,
-  appBarStyle: FlexAppBarStyle.background,
-  appBarOpacity: 0.90,
-  subThemesData: const FlexSubThemesData(
-    blendOnLevel: 30,
-  ),
-  visualDensity: FlexColorScheme.comfortablePlatformDensity,
-  // To use the playground font, add GoogleFonts package and uncomment
-  // fontFamily: GoogleFonts.notoSans().fontFamily,
-),
-// If you do not have a themeMode switch, uncomment this line
-// to let the device system mode control the theme mode:
-// themeMode: ThemeMode.system,
-
         title: 'Fin Tracker',
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
@@ -53,9 +21,38 @@ darkTheme: FlexThemeData.dark(
           // When navigating to the "/" route, build the FirstScreen widget.
           // '/': (context) => const OnboardingScreen(),
           // When navigating to the "/second" route, build the SecondScreen widget.
-          '/second': (context) => const HomeScreen(),
+          '/second': (context) => HomeScreen(),
         },
-      
+        theme: FlexThemeData.light(
+          scheme: FlexScheme.outerSpace,
+          surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
+          blendLevel: 20,
+          appBarOpacity: 0.95,
+          subThemesData: const FlexSubThemesData(
+            blendOnLevel: 20,
+            blendOnColors: false,
+          ),
+          visualDensity: FlexColorScheme.comfortablePlatformDensity,
+          // To use the playground font, add GoogleFonts package and uncomment
+          // fontFamily: GoogleFonts.notoSans().fontFamily,
+        ),
+        darkTheme: FlexThemeData.dark(
+          scheme: FlexScheme.outerSpace,
+          surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
+          blendLevel: 15,
+          appBarStyle: FlexAppBarStyle.background,
+          appBarOpacity: 0.90,
+          subThemesData: const FlexSubThemesData(
+            blendOnLevel: 30,
+          ),
+          visualDensity: FlexColorScheme.comfortablePlatformDensity,
+          // To use the playground font, add GoogleFonts package and uncomment
+          // fontFamily: GoogleFonts.notoSans().fontFamily,
+        ),
+// If you do not have a themeMode switch, uncomment this line
+// to let the device system mode control the theme mode:
+// themeMode: ThemeMode.system,
+
         home: const OnboardingScreen());
   }
 }

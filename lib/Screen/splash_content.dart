@@ -20,7 +20,7 @@ List<OnboardingContents> contents = [
     title: "Stay organized with team",
     image: "assets/images/undraw_Investor_update_re_qnuu.png",
     desc:
-        "But understanding the contributions our colleagues make to our teams in tracking money.",
+        "But understanding the contributions our colleagues make to our teams .",
   ),
   OnboardingContents(
     title: "Get report in any format",
