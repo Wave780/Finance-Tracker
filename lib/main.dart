@@ -1,6 +1,7 @@
 import 'package:fin_tracker/Screen/home.dart';
 import 'package:flutter/material.dart';
 import 'package:fin_tracker/Screen/splash.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  theme: FlexThemeData.light(
+  
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: FlexThemeData.light(
   scheme: FlexScheme.outerSpace,
   surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
   blendLevel: 20,
@@ -39,11 +46,6 @@ darkTheme: FlexThemeData.dark(
 // to let the device system mode control the theme mode:
 // themeMode: ThemeMode.system,
 
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
         title: 'Fin Tracker',
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
@@ -53,7 +55,7 @@ darkTheme: FlexThemeData.dark(
           // When navigating to the "/second" route, build the SecondScreen widget.
           '/second': (context) => const HomeScreen(),
         },
-        theme: ThemeData(primarySwatch: Colors.pink),
+      
         home: const OnboardingScreen());
   }
 }
