@@ -54,7 +54,7 @@ class _AddTranscationState extends State<AddTranscation> {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0.0),
       backgroundColor: Colors.white,
-      body: ListView(padding: const EdgeInsets.all(12), children: [
+      body: Column(children: [
         const Text(
           "\nAdd Transaction",
           style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
@@ -230,7 +230,7 @@ class _AddTranscationState extends State<AddTranscation> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 150,
         ),
         SizedBox(
@@ -245,7 +245,7 @@ class _AddTranscationState extends State<AddTranscation> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       backgroundColor: Colors.red[700],
-                      content: Text(
+                      content: const Text(
                         "Please enter a valid Amount !",
                         style: TextStyle(
                           fontSize: 16.0,
@@ -256,7 +256,7 @@ class _AddTranscationState extends State<AddTranscation> {
                   );
                 }
               },
-              child: Text(
+              child: const Text(
                 "Save",
                 style: TextStyle(
                   fontSize: 20.0,
