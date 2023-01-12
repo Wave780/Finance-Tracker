@@ -54,7 +54,7 @@ class _AddTranscationState extends State<AddTranscation> {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0.0),
       backgroundColor: Colors.white,
-      body: Column(children: [
+      body: ListView(padding: const EdgeInsets.all(12), children: [
         const Text(
           "\nAdd Transaction",
           style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
