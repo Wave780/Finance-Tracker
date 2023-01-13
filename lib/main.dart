@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           // When navigating to the "/" route, build the FirstScreen widget.
           // '/': (context) => const OnboardingScreen(),
           // When navigating to the "/second" route, build the SecondScreen widget.
-          '/second': (context) => HomeScreen(),
+          '/second': (context) => const HomeScreen(),
         },
         theme: FlexThemeData.light(
           scheme: FlexScheme.outerSpace,
