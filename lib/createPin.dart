@@ -5,56 +5,29 @@ class CreatePinPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-  body: Padding(
-    padding: const EdgeInsets.all(30.0),
-    child:  Wrap(
-      alignment: WrapAlignment.start,
-      spacing: 4,
-      direction: Axis.horizontal,
-      runSpacing: 10,
-      children: [
-        otpTextField(context, true),
-        otpTextField(context, false),
-        otpTextField(context, false),
-        otpTextField(context, false),
-        otpTextField(context, false),
-        otpTextField(context, false),
-      ],
-    ),
-  ),
-);
-
-Widget _otpTextField(BuildContext context, bool autoFocus) {
- return  Container(
-  height: MediaQuery.of(context).size.shortestSide * 0.13,
-  decoration: BoxDecoration(
-    border: Border.all(color: Colors.grey),
-    borderRadius: BorderRadius.circular(5),
-    color: Colors.white,
-    shape: BoxShape.rectangle,
-  ),
-  child: AspectRatio(
-    aspectRatio: 1,
-    child: TextField(
-      autofocus: autoFocus,
-      decoration: InputDecoration(
-        border: InputBorder.none,
-      ),
-      textAlign: TextAlign.center,
-      keyboardType: TextInputType.number,
-      style: TextStyle(),
-      maxLines: 1,
-      onChanged: (value) {
-        if(value.isNotEmpty) {
-          FocusScope.of(context).nextFocus();
-        }
-      },
-    ),
-  ),
-);
-}
+    Future.delayed(Duration.zero, () {
+      showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 1000,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const Text('Create A Pin'),
+                  ElevatedButton(
+                    child: const Text('Continue'),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    });
+      return Text('data');
   }
-  
-  otpTextField(BuildContext context, bool bool) {}
 }

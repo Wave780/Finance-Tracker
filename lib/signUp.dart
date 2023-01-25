@@ -1,3 +1,4 @@
+import 'package:fin_tracker/createPin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -68,7 +69,12 @@ class SignUpPage extends StatelessWidget {
                   height: 65,
                   width: 220,
                   child: ElevatedButton(
-                      onPressed: () {Navigator.pushNamed(context, '/third');},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) =>
+                             CreatePinPage()
+                        ));
+                      },
                       child: const Text('Next',
                           style: TextStyle(
                             fontSize: 25,

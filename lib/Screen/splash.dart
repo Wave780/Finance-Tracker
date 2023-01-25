@@ -34,7 +34,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         borderRadius: BorderRadius.all(
           Radius.circular(50),
         ),
-        color: Color.fromARGB(255, 14, 17, 92),
+        color: Color(0xff0061a2),
       ),
       margin: const EdgeInsets.only(right: 5),
       height: 10,
@@ -122,7 +122,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             },
                             child: const Text("START"),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 14, 17, 92),
+                              //backgroundColor: Color.fromARGB(255, 14, 17, 92),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
@@ -149,7 +149,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 child: const Text(
                                   "SKIP",
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 14, 17, 92),
+                                   // color: Color.fromARGB(255, 14, 17, 92),
                                   ),
                                 ),
                                 style: TextButton.styleFrom(
@@ -169,7 +169,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor:
-                                     const Color.fromARGB(255, 14, 17, 92),
+                                     const Color(0xff0061a2),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50),
                                   ),
