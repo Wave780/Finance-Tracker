@@ -1,3 +1,4 @@
+import 'package:fin_tracker/createPin.dart';
 import 'package:fin_tracker/signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:fin_tracker/Screen/splash.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
           // '/': (context) => const OnboardingScreen(),
           // When navigating to the "/second" route, build the SecondScreen widget.
           '/second': (context) => const SignUpPage(),
+          '/third': (context) => const CreatePinPage(),
         },
         theme: FlexThemeData.light(
           scheme: FlexScheme.flutterDash,

@@ -68,7 +68,7 @@ class SignUpPage extends StatelessWidget {
                   height: 65,
                   width: 220,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.pushNamed(context, '/third');},
                       child: const Text('Next',
                           style: TextStyle(
                             fontSize: 25,
