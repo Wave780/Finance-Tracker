@@ -1,3 +1,4 @@
+import 'package:fin_tracker/signUp.dart';
 import 'package:flutter/material.dart';
 
 class CreatePinPage extends StatelessWidget {
@@ -28,6 +29,6 @@ class CreatePinPage extends StatelessWidget {
         },
       );
     });
-      return Text('data');
+    return SignUpPage();
   }
 }
